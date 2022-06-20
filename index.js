@@ -32,9 +32,9 @@ app.post("/tweets", (req, res) => {
 });
 
 app.get("/tweets", (req, res) => {
-    let resposta = tweets
+    let resposta = [...tweets].reverse()
     if (tweets.length > 10)
-    resposta = tweets.slice(-10)
+    resposta = [...tweets].reverse().slice(0,10)
 
     res.send(resposta);
 });
